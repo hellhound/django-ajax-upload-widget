@@ -6,7 +6,7 @@
     var AjaxUploadWidget = global.AjaxUploadWidget = function(element, options) {
         this.options = {
             changeButtonText: 'Change',
-            removeButtonText: 'Remove',
+            //removeButtonText: 'Remove',
             previewAreaClass: 'ajax-upload-preview-area',
             previewFilenameLength: 30,
             onUpload: null, // right before uploading to the server
@@ -53,6 +53,7 @@
             });
         this.$element.after(this.$changeButton);
 
+        /*
         this.$removeButton = $('<button type="button" class="btn-remove"></button>')
             .text(this.options.removeButtonText)
             .on('click', function(evt) {
@@ -64,6 +65,7 @@
                 self.displaySelection();
             });
         this.$changeButton.after(this.$removeButton);
+        */
 
         this.displaySelection();
     };
@@ -125,16 +127,18 @@
 
             this.$previewArea.show();
             this.$changeButton.show();
+            /*
             if(this.$element.data('required') === 'True') {
                 this.$removeButton.hide();
             } else {
                 this.$removeButton.show();
             }
+            */
             this.$element.hide();
         } else {
             this.$previewArea.slideUp();
             this.$changeButton.hide();
-            this.$removeButton.hide();
+            //this.$removeButton.hide();
             this.$element.show();
         }
     };
